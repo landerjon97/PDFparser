@@ -1,13 +1,15 @@
+"""
+Author: Jonathan Lander
+Date: 9/14/18
+Purpose: To create a PDF searchable
+"""
 import PyPDF2
-
-
 def main():
     words = []
     time = []
     classType = []
     words = getWords()
     seperateTimeWords(words,time,classType)
-
     print(sorted(classType))
 
 def createFile():
@@ -41,7 +43,7 @@ def getWords():
 
 def seperateTimeWords(words,time, classType):
     keywords = ['C01)', 'C01', 'ITV', 'TBA', 'C01/', 'C02', 'C02/', 'C02)', 'V01', 'V01/', 'V01)', 'UNDG', '(E', '(E.',
-                'X01.', 'X01', 'NOT', 'THE']
+                'X01.', 'X01', 'NOT', 'THE', 'AH,']
     i = 0
     while i < len(words):
         try:
@@ -70,6 +72,5 @@ def seperateTimeWords(words,time, classType):
     for classT in classType:
         print(classT)
 
-
-
+#Calling the functions.
 main()
